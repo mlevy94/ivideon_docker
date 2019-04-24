@@ -10,4 +10,11 @@ RUN bash -c 'wget -O - http://packages.ivideon.com/ubuntu/keys/ivideon.key | sud
 
 RUN apt-get update && apt-get install ivideon-video-server -y
 
-ENTRYPOINT ["/bin/bash", "-c", "/startup.sh & sudo ivideon-server"]
+RUN echo $'\n\n\
+[program:ivideon]\n\
+priority=10\n\
+directory=%HOME%\n\
+command=/usr/bin/ivideon-server\n\
+user=%USER%\n\
+environment=DISPLAY=":1",HOME="%HOME%",USER="%USER%"\n\
+>> /etc/supervisor/conf.d/supervisord.conf'
