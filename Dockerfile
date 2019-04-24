@@ -10,4 +10,4 @@ RUN bash -c 'wget -O - http://packages.ivideon.com/ubuntu/keys/ivideon.key | sud
 
 RUN apt-get update && apt-get install ivideon-video-server -y
 
-ENTRYPOINT ["/bin/bash", "-c", "/startyp.sh & sudo ivideon-server"]
+ENTRYPOINT ["/bin/bash", "-c", "/startup.sh & sudo ivideon-server"]
