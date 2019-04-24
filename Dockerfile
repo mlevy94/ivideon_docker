@@ -1,6 +1,8 @@
 FROM dorowu/ubuntu-desktop-lxde-vnc:bionic
 
-RUn apt-get update && apt-get install wget -y
+RUN apt-get update && apt-get upgrade -y
+
+RUN apt-get install -y wget gpg-agent
 
 RUN wget http://packages.ivideon.com/ubuntu/keys/ivideon.list -O /etc/apt/sources.list.d/ivideon.list
 
