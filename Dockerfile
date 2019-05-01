@@ -18,3 +18,6 @@ command=/usr/bin/ivideon-server\n\
 user=%USER%\n\
 environment=DISPLAY=":1",HOME="%HOME%",USER="%USER%"\n\
 ' >> /etc/supervisor/conf.d/supervisord.conf
+
+EXPOSE 8080
+EXPOSE 3101
